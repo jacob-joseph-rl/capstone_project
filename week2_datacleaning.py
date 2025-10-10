@@ -21,7 +21,7 @@ X[numeric_cols] = median_imputer.fit_transform(X[numeric_cols])
 X[categorical_cols] = mode_imputer.fit_transform(X[categorical_cols])
 
 # Step 5: Remove or anonymize sensitive identifiers
-sensitive_columns = ['patient_nbr']  
+sensitive_columns = ['patient_nbr']
 X.drop(columns=[col for col in sensitive_columns if col in X.columns], inplace=True)
 
 # Step 6: Standardize units if applicable (example placeholder)
@@ -46,6 +46,9 @@ lineage_documentation = {
         'Standardized units where applicable'
     ]
 }
+
+# Save cleaned dataframe to CSV file
+X.to_csv('cleaned_data.csv', index=False)
 
 # Output results
 print("Cleaned Data Sample:")

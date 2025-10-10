@@ -15,7 +15,7 @@ if __name__ == "__main__":
     
     # Database connection URL format: 
     # postgresql://username:password@host:port/database
-    database_url = 'postgresql://user:password@localhost:5432/healthcare_db'
+    database_url = 'postgresql://jacob:test123@localhost:5432/healthcare_db?gssencmode=disable'
 
     load_data_to_db(cleaned_df, database_url, 'diabetes_hospital_data')
 
